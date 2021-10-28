@@ -12,7 +12,7 @@ struct Node
 };
 typedef struct Node *Tree;
 
-//phép duyệt hậtựtự
+//phép duyệt hậu tự
 void postOrder(Tree T)
 {
     if (T != NULL)
