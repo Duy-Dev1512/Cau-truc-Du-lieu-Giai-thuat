@@ -32,6 +32,26 @@ void preOrder(Tree T)
     }
 }
 
+void inOrder(Tree T)
+{
+    if (T != NULL)
+    {
+        inOrder(T->Left);
+        printf("%d ", T->Data);
+        inOrder(T->Right);
+    }
+}
+
+void postOrder(Tree T)
+{
+    if (T != NULL)
+    {
+        postOrder(T->Left);
+        postOrder(T->Right);
+        printf("%c ", T->Data);
+    }
+}
+
 int isMirrors(Tree T1, Tree T2)
 {
     if (T1 == NULL && T2 == NULL)
@@ -82,4 +102,29 @@ int main(){
          printf("\nT1 va T2 phan chieu nhau");
     else
          printf("\nT1 va T2 khong phan chieu cua nhau");
-*/
+||
+    struct Node* T1 = createNode(6);
+    T1->Left = createNode(21);
+    T1->Right = createNode(-53);
+    T1->Left->Right = createNode(3);
+    T1->Right->Left = createNode(-8);
+    T1->Right->Right = createNode(30);
+    T1->Right->Left->Left = createNode(49);
+    T1->Right->Left->Right = createNode(17);
+    struct Node* T2 = createNode(6);
+    T2->Left = createNode(-53);
+    T2->Right = createNode(21);
+    T2->Left->Right = createNode(3);
+    T2->Right->Left = createNode(-8);
+    T2->Right->Right = createNode(30);
+    T2->Right->Right->Left = createNode(17);
+    T2->Right->Right->Right = createNode(49);
+    printf("Bieu thuc trung tu cua cay T1: ");
+    inOrder(T1);
+    printf("\nBieu thuc trung tu cua cay T2: ");
+    inOrder(T2);
+    if(isMirrors(T1,T2))    \t
+    \tprintf("\nT1 va T2 phan chieu nhau");
+    else
+    \tprintf("\nT1 va T2 khong phan chieu cua nhau");
+    */
